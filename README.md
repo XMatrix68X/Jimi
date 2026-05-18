@@ -1,52 +1,9 @@
-# ML_ChemTable
-You can refer to the "Guildline.pdf" for detailed introduction and environment preparation for the machine learning model. This model is used to replace the FGM table.
-Here, I will introduce my parameter setting and training strategy for this model.
-## The parameter setting
-### The basic networking setting
-The number of hidden layers: **5**
-
-The number of neurons: **10, 20, 40, 20, 10**
-
-For the loss function and optimization function, you can find them in the guildline as well as in the "main.py".
-### The input and output
-The **inputs** of the network are : Z(mixture fraction) and C(normalized progress variable)
-
-The **outputs**: The values of RHO, Diff, VISC, T, SRC_PROG 
-## The training process.
-The ANN prediction accuracy depends strongly on the training complexity.
-
-First, 1000(Z) * 1000(C) pairs of data are used to train the model. In this progress, the epoch is set to be 3000;
-
-Second, 1000(Z) * 500(C) pairs of data are used to train the model. In this progress, the epoch is set to be 30000 (You can find them in the 01.orgData_LB);
-
-Finally, 100(Z) * 100(C) pairs of data are used for testing the accuracy of the model. (You can find them in The_Test_Data file)
-
-### The validation
-In this project, Pearson product-moment correlation coefficient is used to test the validation of the model based on the test set of data as mentioned before. You can find the code in "Pearson.py". In short, the closer Pearson value is to 1, the more accurate the prediction is. 
-
-### The result
-The trained model is "Target_network".
-
-The Pearson values:
-
-RHO: **0.99933**
-
-DIFF: **0.99962**
-
-VISC: **0.99944**
-
-T: **0.99927**
-
-SRC_PROG: **0.99312**
-
-
 # Joint Institute Medium Intellectual
 
 ## Project Overview
 
 This project explores how machine learning can be used to support flamelet-based combustion modeling by replacing a traditional lookup-table step with an artificial neural network (ANN). The workflow is centered on training a PyTorch model from precomputed combustion data and then preparing that trained model for later use in an OpenFOAM-based solver workflow.
 
-The original project guideline is preserved in `The_Guildline.pdf`. This Markdown file serves as a practical text description of the project and the contents of this folder.
 
 ## Main Idea
 
