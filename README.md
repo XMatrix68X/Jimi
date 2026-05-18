@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project explores how machine learning can be used to support flamelet-based combustion modeling by replacing a traditional lookup-table step with an artificial neural network (ANN). The workflow is centered on training a PyTorch model from precomputed combustion data and then preparing that trained model for later use in an OpenFOAM-based solver workflow.
+This project is an example of maching learning in computational thermodynamics and combustion. The motivation of the project is to learn to use PyTorch to build a model for data table. The goal is to replace a traditional lookup-table step with an artificial neural network (ANN). The workflow is centered on training a PyTorch model from precomputed combustion data and then preparing that trained model for later use in an OpenFOAM-based solver workflow. The major folder is Joint_Institute_Medium_Intellectual, with almost all the model and data. 
 
 
 ## Main Idea
@@ -140,4 +140,4 @@ It should be treated as a focused experimental codebase for ANN-assisted combust
 
 ## Summary
 
-This project demonstrates a machine-learning surrogate for combustion table lookup. Using `Z` and `C` as inputs, it trains a PyTorch ANN to predict multiple thermochemical outputs and prepares that trained model for later use in an OpenFOAM environment. The folder contains the training code, the network definition, sample data, trained model artifacts, and the original PDF guideline that describes the overall workflow.
+This project demonstrates a machine-learning surrogate for combustion table lookup. Using `Z` and `C` as inputs, it trains a PyTorch ANN to predict multiple thermochemical outputs and prepares that trained model for later use in an OpenFOAM environment. The folder "Joint_Institute_Medium_Intellectual" contains the training code, the network definition, sample data, trained model artifacts, and the original PDF guideline that describes the overall workflow.
